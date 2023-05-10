@@ -5,5 +5,5 @@ from .views import RecipeListView
 app_name = 'recipes'
 
 urlpatterns = [    path('', home, name='home'),
-                   path('list/', RecipeListView.as_view(), name='list'),
+                   path('recipes_list/', RecipeListView.as_view(), name='list'),
                ]
