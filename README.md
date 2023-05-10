@@ -1,0 +1,1 @@
+Hey! Welcome to my Recipe App. This is a Django-based web application that allows users to store and retrieve their favorite recipes. It's a simple yet effective tool for organizing and managing your cooking needs. With Recipe App, you can easily add new recipes, update existing ones, and search for specific dishes. Happy cooking!
