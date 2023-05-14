@@ -2,10 +2,11 @@
 <html>	
 <head>
 	<title>MacroFriendlyRecipes</title>
-	<link href="https://fonts.googleapis.com/css2?family=Abel&display=swap">
+	{% load static %}
+	<link href="{% static 'fonts/Abel.css' %}" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+		@import url("{% static 'fonts/Abel.css' %}");
 		/* Styles for the columns */
 		.column {
 			float: left;
@@ -90,8 +91,8 @@
 <body>
     <!-- Navigation bar -->
 	<div class="topnav" id="myTopnav">
-		<a href="recipes\templates\recipes\recipes_home.html" class="active">Home</a>
-		<a href="recipes\templates\recipes\recipes_list.html">Recipes</a>
+		<a href="{% url 'recipes_home' %}" class="active">Home</a>
+		<a href="{% url 'recipes_list' %}">Recipes</a>
 		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 			<i class="fa fa-bars"></i>
 		</a>
@@ -99,15 +100,15 @@
 	<div class="row">
 		<div class="column">
 			<h2>Breakfasts</h2>
-			<a href="breakfast.html"><img src="media\french_toast_img.jpg" alt="Breakfast"></a>
+			<a href="{% url breakfast %}"><img src="media/french_toast_img.jpg" alt="Breakfast"></a>
 		</div>
 		<div class="column">
 			<h2>Lunches</h2>
-			<a href="lunch.html"><img src="media\rice_img.jpg" alt="Lunch"></a>
+			<a href="{% url lunch %}"><img src="media/rice_img.jpg" alt="Lunch"></a>
 		</div>
 		<div class="column">
 			<h2>Dinners</h2>
-			<a href="dinner.html"><img src="media\spaghetti_img.jpg" alt="Dinner"></a>
+			<a href="{% url dinner %}"><img src="media/spaghetti_img.jpg" alt="Dinner"></a>
 		</div>
 	</div>
 </body>

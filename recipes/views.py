@@ -5,7 +5,7 @@ from django.views.generic import ListView
 # Create your views here.
 
 def home(request):
-   return render(request, 'recipes/recipes_home.html')
+    return render(request, 'recipes_home.html')
 
 class RecipeListView(ListView):
     model = Recipe
