@@ -4,8 +4,11 @@ from django.views.generic import ListView
 
 # Create your views here.
 
-def home(request):
-    return render(request, 'recipes_home.html')
+def recipes_home(request):
+  context = {
+    'title': 'Home',
+  }
+  return render(request, 'recipes_home.html', context)
 
 class RecipeListView(ListView):
     model = Recipe
