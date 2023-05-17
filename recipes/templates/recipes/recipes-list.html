@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,21 +34,24 @@
 <body>
 	<h1>My Recipes - Recipes</h1>
 	<div class="row">
-		<div class="column">
-			<h2>French Toast</h2>
-			<a href="details.html"><img src="{% static 'french_toast_img.jpg' %}" alt="French Toast"></a>
-		</div>
-		<div class="column">
-			<h2>Rice and Beans</h2>
-			<a href="details.html"><img src="{% static 'rice_img.jpg' %}" alt="Rice and Beans"></a>
-		</div>
-		<div class="column">
-			<h2>Spaghetti</h2>
-			<a href="details.html"><img src="{% static 'spaghetti_img.jpg' %}" alt="Spaghetti"></a> -->
-		</div>
+	  <div class="column">
+		<h2>French Toast</h2>
+		<!-- <a href="/recipes/french_toast"> -->
+		  <img src="/media/french_toast_img.jpg" alt="French Toast">
+		</a>
+	  </div>
+	  <div class="column">
+		<h2>Rice and Beans</h2>
+		<!-- <a href="/recipes/rice_and_beans"> -->
+		  <img src="/media/rice_img.jpg" alt="Rice and Beans">
+		</a>
+	  </div>
+	  <div class="column">
+		<h2>Spaghetti</h2>
+		<!-- <a href="/recipes/spaghetti"> -->
+		  <img src="/media/spaghetti_img.jpg" alt="Spaghetti">
+		</a>
+	  </div>
 	</div>
-	
-</head>
-<body>
-</body>
+  </body>
 </html>
