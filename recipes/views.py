@@ -10,3 +10,11 @@ def home(request):
 class RecipeListView(ListView):
     model = Recipe
     template_name = 'recipes/recipes-list.html'
+    context_object_name = 'object_list'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        recipe_type = self.request.GET.get('type')
+        if recipe_type:
+            queryset = queryset.filter(recipe_type=recipe_type)
+        return queryset
