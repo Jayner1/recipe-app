@@ -29,9 +29,29 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('recipes:home')  # Replace 'recipes:home' with the actual URL name of the home page
+            return redirect('recipes:home')
         else:
             error_message = 'Invalid username or password'
             return render(request, 'login.html', {'error_message': error_message})
     else:
         return render(request, 'login.html')
+    
+
+def breakfasts_view(request):
+    # Retrieve breakfast recipes from the database
+    breakfast_recipes = Recipe.objects.filter(recipe_type='Breakfast')
+
+    # Pass breakfast recipes to the template context
+    context = {'breakfast_recipes': breakfast_recipes}
+    
+    return render(request, 'breakfasts.html', context)
+
+def lunches_view(request):
+    lunch_recipes = Recipe.objects.filter(recipe_type='Lunch')
+    context = {'lunch_recipes': lunch_recipes}
+    return render(request, 'lunches.html', context)
+
+def dinners_view(request):
+    dinner_recipes = Recipe.objects.filter(recipe_type='Dinner')
+    context = {'dinner_recipes': dinner_recipes}
+    return render(request, 'dinners.html', context)

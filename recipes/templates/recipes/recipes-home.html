@@ -3,10 +3,10 @@
 <html>	
 <head>
 	<title>MacroFriendlyRecipes</title>
-	<link href="{% static 'fonts/Abel.css' %}" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
-		@import url("{% static 'fonts/Abel.css' %}");
+		@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 		/* Styles for the columns */
 		.column {
 			float: left;
@@ -100,16 +100,16 @@
     </nav>
     <div class="row">
 		<div class="column">
-			<h2><a href="breakfasts.html">Breakfasts</a></h2>
-			<a href="breakfasts.html"><img src="{% static 'french_toast_img.jpg' %}" alt="Breakfast"></a>
+			<h2><a href="{% url 'recipes:breakfasts' %}">Breakfasts</a></h2>
+			<a href="{% url 'recipes:breakfasts' %}"><img src="{% static 'french_toast_img.jpg' %}" alt="Breakfast"></a>
 		</div>
 		<div class="column">
-			<h2><a href="lunches.html">Lunches</a></h2>
-			<a href="lunches.html"><img src="{% static 'rice_img.jpg' %}" alt="Lunch"></a>
+			<h2><a href="{% url 'recipes:lunches' %}">Lunches</a></h2>
+			<a href="{% url 'recipes:lunches' %}"><img src="{% static 'rice_img.jpg' %}" alt="Lunch"></a>
 		</div>
 		<div class="column">
-			<h2><a href="dinners.html">Dinners</a></h2>
-			<a href="dinners.html"><img src="{% static 'spaghetti_img.jpg' %}" alt="Dinner"></a>
+			<h2><a href="{% url 'recipes:dinners' %}">Dinners</a></h2>
+			<a href="{% url 'recipes:dinners' %}"><img src="{% static 'spaghetti_img.jpg' %}" alt="Dinner"></a>
 		</div>
 	</div>
 </body>
