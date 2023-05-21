@@ -86,6 +86,28 @@
 		    text-align: left;
 		  }
 		}
+
+		/* Styles for the search form */
+		.search-form {
+			float: right;
+			margin-top: 14px;
+			margin-right: 16px;
+		}
+
+		.search-form input[type="text"] {
+			padding: 6px;
+			border: none;
+			border-radius: 4px;
+		}
+
+		.search-form input[type="submit"] {
+			padding: 6px 10px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
 	</style>
 </head>
 <body>
@@ -94,6 +116,10 @@
 		<a href="{% url 'recipes:login' %}">Logout</a>
         <a href="{% url 'recipes:home' %}" class="active">Home</a>
         <a href="{% url 'recipes:list' %}">Recipes</a>
+		<!-- <form action="{% url 'recipes:search' %}" method="GET" class="search-form">
+			<input type="text" name="query" placeholder="Search recipe">
+			<button type="submit">Search</button>
+		</form> -->
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
