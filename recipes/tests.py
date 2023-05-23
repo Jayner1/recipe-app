@@ -23,3 +23,10 @@ class RecipeModelTestCase(TestCase):
 
     def test_recipe_difficulty(self):
         self.assertEqual(self.recipe.difficulty, "Easy")
+
+    def test_recipe_type_default_value(self):
+        self.assertEqual(self.recipe.recipe_type, "Breakfast")
+
+    def test_recipe_pic_upload_to(self):
+        upload_to = Recipe._meta.get_field("pic").upload_to
+        self.assertEqual(upload_to, "media/")

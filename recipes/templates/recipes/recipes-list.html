@@ -132,9 +132,10 @@
         <a href="{% url 'recipes:home' %}" class="active">Home</a>
         <a href="{% url 'recipes:list' %}">Recipes</a>
         <form action="{% url 'recipes:search' %}" method="GET" class="search-form">
-            <input type="text" name="query" placeholder="Search Recipe" value="{{ query }}">
-            <button type="submit">Search</button>
-        </form>
+			{% csrf_token %}
+			<input type="text" name="query" placeholder="Search Recipe" value="{{ query }}">
+			<button type="submit">Search</button>
+		</form>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>

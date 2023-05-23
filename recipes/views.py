@@ -66,15 +66,16 @@ def search_view(request):
         search_results = Recipe.objects.filter(
             Q(recipe_name__icontains=query) |
             Q(ingredients__icontains=query) |
-            Q(cooking_time__icontains=query)
+            Q(cooking_time__icontains=query) |
+            Q(recipe_type__icontains=query)
         )
 
         # Pass the search results and query to the template context
         context = {'search_results': search_results, 'query': query}
-        return render(request, 'recipes/recipes-list.html', context)
+        return render(request, 'recipes/search.html', context)
 
     else:
         form = RecipeSearchForm()
 
     context = {'form': form}
-    return render(request, 'recipes/recipes-list.html', context)
+    return render(request, 'recipes/search.html', context)
