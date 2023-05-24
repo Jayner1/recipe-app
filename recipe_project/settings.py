@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-ml49cp(e)=yakpe
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['macrofriendlyrecipes-jasontyale.b4a.run']
+ALLOWED_HOSTS = ['macrofriendlyrecipes-jasontyale.b4a.run', 'https://immense-ocean-10427.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = ['macrofriendlyrecipes-jasontyale.b4a.run']
 
