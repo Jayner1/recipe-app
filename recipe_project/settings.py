@@ -34,6 +34,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['macrofriendlyrecipes-jasontyale.b4a.run']
 
+CSRF_TRUSTED_ORIGINS = ['macrofriendlyrecipes-jasontyale.b4a.run', 'localhost']
+
 
 # Application definition
 
