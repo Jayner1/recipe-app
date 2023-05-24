@@ -3,8 +3,11 @@ from .models import Recipe
 from django.views.generic import ListView
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
-from .forms import RecipeSearchForm
 from django.db.models import Q
+from .utils import get_chart
+from .forms import RecipeSearchForm
+import pandas as pd
+
 
 # Create your views here.
 
@@ -37,7 +40,7 @@ def login_view(request):
             return render(request, 'login.html', {'error_message': error_message})
     else:
         return render(request, 'login.html')
-    
+
 
 def breakfasts_view(request):
     # Retrieve breakfast recipes from the database
@@ -45,18 +48,21 @@ def breakfasts_view(request):
 
     # Pass breakfast recipes to the template context
     context = {'breakfast_recipes': breakfast_recipes}
-    
+
     return render(request, 'breakfasts.html', context)
+
 
 def lunches_view(request):
     lunch_recipes = Recipe.objects.filter(recipe_type='Lunch')
     context = {'lunch_recipes': lunch_recipes}
     return render(request, 'lunches.html', context)
 
+
 def dinners_view(request):
     dinner_recipes = Recipe.objects.filter(recipe_type='Dinner')
     context = {'dinner_recipes': dinner_recipes}
     return render(request, 'dinners.html', context)
+
 
 def search_view(request):
     if request.method == 'GET':
@@ -70,12 +76,17 @@ def search_view(request):
             Q(recipe_type__icontains=query)
         )
 
-        # Pass the search results and query to the template context
-        context = {'search_results': search_results, 'query': query}
+        # Prepare data for the chart
+        chart_type = '#1'  # Replace with the desired chart type
+        data = {
+            'name': [recipe.recipe_name for recipe in search_results],
+            'difficulty': [recipe.difficulty for recipe in search_results],
+        }
+        chart_data = get_chart(chart_type, data)
+
+        context = {'search_results': search_results, 'query': query, 'chart_data': chart_data}
         return render(request, 'recipes/search.html', context)
 
-    else:
-        form = RecipeSearchForm()
-
+    form = RecipeSearchForm()
     context = {'form': form}
     return render(request, 'recipes/search.html', context)
