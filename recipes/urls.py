@@ -3,6 +3,7 @@ from .views import home
 from .views import RecipeListView
 from . import views
 
+
 app_name = 'recipes'
 
 urlpatterns = [
@@ -15,5 +16,6 @@ urlpatterns = [
     path('dinners/', views.dinners_view, name='dinners'),  # Add URL for dinners
     path('search/', views.search_view, name='search'),
     path('add-recipe/', views.add_recipe, name='add-recipe'),
-    
+    path('about-me/', views.about_me, name='about-me'),
+
 ]

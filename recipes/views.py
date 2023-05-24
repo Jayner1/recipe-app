@@ -104,3 +104,6 @@ def add_recipe(request):
         form = RecipeForm()
 
     return render(request, 'add-recipe.html', {'form': form})
+
+def about_me(request):
+    return render(request, 'about-me.html')
