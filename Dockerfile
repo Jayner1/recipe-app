@@ -17,7 +17,7 @@ COPY . .
 # ENV MY_VARIABLE=my_value
 
 # Expose the port your Django app will run on (default is 8000)
-EXPOSE 8000
+# EXPOSE 8000
 
 # Define the command to run your Django app
 CMD ["python", "manage.py", "runserver", "127.0.0.1:8000"]
