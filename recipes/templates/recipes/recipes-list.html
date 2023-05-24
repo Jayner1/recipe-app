@@ -131,6 +131,7 @@
         <a href="{% url 'recipes:login' %}">Logout</a>
         <a href="{% url 'recipes:home' %}" class="active">Home</a>
         <a href="{% url 'recipes:list' %}">Recipes</a>
+        <a href="{% url 'recipes:add-recipe' %}">Add Recipe</a>
         <form action="{% url 'recipes:search' %}" method="GET" class="search-form">
 			{% csrf_token %}
 			<input type="text" name="query" placeholder="Search Recipe" value="{{ query }}">

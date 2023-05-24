@@ -14,5 +14,6 @@ urlpatterns = [
     path('lunches/', views.lunches_view, name='lunches'),  # Add URL for lunches
     path('dinners/', views.dinners_view, name='dinners'),  # Add URL for dinners
     path('search/', views.search_view, name='search'),
-
+    path('add-recipe/', views.add_recipe, name='add-recipe'),
+    
 ]

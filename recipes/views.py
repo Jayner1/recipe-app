@@ -7,7 +7,7 @@ from django.db.models import Q
 from .utils import get_chart
 from .forms import RecipeSearchForm
 import pandas as pd
-
+from .forms import RecipeForm
 
 # Create your views here.
 
@@ -90,3 +90,17 @@ def search_view(request):
     form = RecipeSearchForm()
     context = {'form': form}
     return render(request, 'recipes/search.html', context)
+
+
+def add_recipe(request):
+    if request.method == 'POST':
+        form = RecipeForm(request.POST, request.FILES)
+        if form.is_valid():
+            recipe = form.save(commit=False)  # Save the form data without committing to the database yet
+            # Perform any additional modifications or operations on the recipe instance if needed
+            recipe.save()  # Save the recipe to the database
+            return redirect('recipes:list')  # Redirect to the recipe list page
+    else:
+        form = RecipeForm()
+
+    return render(request, 'add-recipe.html', {'form': form})
