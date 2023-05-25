@@ -96,14 +96,14 @@ def add_recipe(request):
     if request.method == 'POST':
         form = RecipeForm(request.POST, request.FILES)
         if form.is_valid():
-            recipe = form.save(commit=False)  # Save the form data without committing to the database yet
-            # Perform any additional modifications or operations on the recipe instance if needed
-            recipe.save()  # Save the recipe to the database
-            return redirect('recipes:list')  # Redirect to the recipe list page
+            recipe = form.save(commit=False)
+            recipe.save()
+            return redirect('recipes:list')
     else:
         form = RecipeForm()
 
     return render(request, 'add-recipe.html', {'form': form})
+
 
 def about_me(request):
     return render(request, 'about-me.html')
