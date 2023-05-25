@@ -126,7 +126,7 @@
         {% csrf_token %}
         <div class="form-group">
             <label for="recipeName">Recipe Name</label>
-            <input type="text" class="form-control" id="recipeName" name="recipeName" required>
+            <input type="text" class="form-control" id="recipeName" name="recipe_name" required>
         </div>
         <div class="form-group">
             <label for="ingredients">Ingredients</label>
@@ -134,7 +134,7 @@
         </div>
         <div class="form-group">
             <label for="cookingTime">Cooking Time (minutes)</label>
-            <input type="number" class="form-control" id="cookingTime" name="cookingTime" required>
+            <input type="number" class="form-control" id="cookingTime" name="cooking_time" required>
         </div>
         <div class="form-group">
             <label for="difficulty">Difficulty</label>
@@ -146,7 +146,7 @@
         </div>
         <div class="form-group">
             <label for="recipeType">Recipe Type</label>
-            <select class="form-control" id="recipeType" name="recipeType" required>
+            <select class="form-control" id="recipeType" name="recipe_type" required>
                 <option value="Breakfast">Breakfast</option>
                 <option value="Lunch">Lunch</option>
                 <option value="Dinner">Dinner</option>
@@ -154,7 +154,7 @@
         </div>
         <div class="form-group">
             <label for="image">Image</label>
-            <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
+            <input type="file" class="form-control" id="image" name="pic" accept="image/*" required>
         </div>
         <!-- Add more form fields for other recipe details -->
         <button type="submit" class="btn btn-primary">Save</button>
