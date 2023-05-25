@@ -19,7 +19,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
-os.path.join(BASE_DIR, 'static'),
+
 ]
 
 
@@ -34,7 +34,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['immense-ocean-10427.herokuapp.com','macrofriendlyrecipes-jasontyale.b4a.run', 'https://immense-ocean-10427.herokuapp.com']
 
-CSRF_TRUSTED_ORIGINS = ['macrofriendlyrecipes-jasontyale.b4a.run']
 
 
 # Application definition
